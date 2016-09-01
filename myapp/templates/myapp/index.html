@@ -1,0 +1,46 @@
+{% load staticfiles %}
+<html>
+<head>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/myapp.css' %}">
+</head>
+<body>
+<div style="overflow-x:auto;">
+<table>
+<tr>
+  <th>Jméno</th>
+  <th>Rodné číslo</th>
+  <th>Diagnóza</th>
+  <th>Rad. As.</th>
+  <th>Lékař</th>
+  <th>Datum a čas resimulace</th>
+  <th>Datum zakreslení</th>
+  <th>Zakreslení stav/lékař</th>
+  <th>Datum plánování</th>
+  <th>Plánování stav/plánovač</th>
+  <th>Schválení lékař 1</th>
+  <th>Schválení lékař 2</th>
+  <th>Tisk</th>
+</tr>
+{% for ob in objekt %}
+<tr>
+  <td>{{ob.name}}</td>
+  <td>{{ob.birthNumber}}</td>
+  <td>{{ob.diagnosis}}</td>
+  <td>{{ob.radAs}}</td>
+  <td>{{ob.doctor}}</td>
+  <td>{{ob.resimulTime}}</td>
+  <td>{{ob.drawingTime}}</td>
+  <td>{{ob.drawingDoctor}}</td>
+  <td>{{ob.planningTime}}</td>
+  <td>{{ob.planningDoctor}}</td>
+  <td>{{ob.ok1}}</td>
+  <td>{{ob.ok2}}</td>
+  <td>{{ob.tisk}}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+</body>
+</html>
