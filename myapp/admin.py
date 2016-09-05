@@ -21,5 +21,9 @@ admin.site.site_header = 'Správa pacientů'
 
 class adminUloziste(admin.ModelAdmin):
     list_display = ('name', 'birthNumber', 'diagnosis', 'radAs', 'doctor', 'resimulTime', 'drawingTime', 'drawingDoctor', 'planningTime', 'planningDoctor', 'ok1', 'ok2', 'tisk')
+    #list_filter = ['name', 'birthNumber', 'diagnosis', 'radAs', 'doctor', 'resimulTime', 'drawingTime', 'drawingDoctor', 'planningTime', 'planningDoctor', 'ok1', 'ok2', 'tisk']
+    search_fields = ['name', 'birthNumber', 'diagnosis', 'radAs', 'doctor', 'resimulTime', 'drawingTime', 'drawingDoctor', 'planningTime', 'planningDoctor', 'ok1', 'ok2', 'tisk']
+    #date_hierarchy = 'resimulTime'
+    list_per_page = 50
 
 admin.site.register(Uloziste, adminUloziste)
