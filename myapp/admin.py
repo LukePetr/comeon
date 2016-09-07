@@ -28,7 +28,7 @@ class adminUloziste(admin.ModelAdmin):
         }),
        )
 
-    list_display = ('id', 'name', 'birthNumber', 'diagnosis', 'radAs', 'doctor', 'resimulTime', 'drawingTime', 'drawingDoctor', 'planningTime', 'planningDoctor', 'ok1', 'ok2', 'pomucky', 'tisk', Pozn)
+    list_display = ('name', 'birthNumber', 'diagnosis', 'radAs', 'doctor', 'resimulTime', 'drawingTime', 'drawingDoctor', 'planningTime', 'planningDoctor', 'ok1', 'ok2', 'pomucky', 'tisk', Pozn)
 
     #readonly_fields = ('pznDisplay',)
     #list_display = ('name', 'birthNumber', 'diagnosis', 'radAs', 'doctor', 'resimulTime', 'drawingTime', 'drawingDoctor', 'planningTime', 'planningDoctor', 'ok1', 'ok2', 'pomucky', 'tisk', 'pznDisplay')
