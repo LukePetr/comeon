@@ -56,7 +56,7 @@ ROOT_URLCONF = 'comeon.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/comeon/myapp/templates/myapp/'],
+        'DIRS': ["myapp/templates/"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

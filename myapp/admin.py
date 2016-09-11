@@ -9,6 +9,9 @@ def make_active(modeladmin, news, queryset):
     queryset.update(is_active=True)
 make_active.short_description = u"Aktivovat vybraného uživatele"
 
+class Media:
+    css = {'all': ('static/css/admin/.css',)}
+
 class CustomUserAdmin(UserAdmin):
     actions = [make_active]
 
@@ -17,9 +20,9 @@ admin.site.register(User, CustomUserAdmin)
 
 admin.site.site_header = 'Správa pacientů'
 
-def Pozn(obj):
+def Pzn(obj):
     return obj.pzn!=""
-Pozn.boolean = True
+Pzn.boolean = True
 
 class adminUloziste(admin.ModelAdmin):
     fieldsets = (
@@ -28,13 +31,15 @@ class adminUloziste(admin.ModelAdmin):
         }),
        )
 
-    list_display = ('name', 'birthNumber', 'diagnosis', 'radAs', 'doctor', 'resimulTime', 'drawingTime', 'drawingDoctor', 'planningTime', 'planningDoctor', 'ok1', 'ok2', 'pomucky', 'tisk', Pozn)
+    list_display = ('name', 'birthNumber', 'diagnosis', 'radAs', 'doctor', 'resimulTime', 'drawingTime', 'drawingDoctor', 'planningTime', 'planningDoctor', 'ok1', 'ok2', 'pomucky', 'tisk', Pzn)
+
+    #list_editable = ('doctor', 'resimulTime', 'drawingTime', 'drawingDoctor', 'planningTime', 'planningDoctor', 'ok1', 'ok2', 'pomucky')
 
     #readonly_fields = ('pznDisplay',)
     #list_display = ('name', 'birthNumber', 'diagnosis', 'radAs', 'doctor', 'resimulTime', 'drawingTime', 'drawingDoctor', 'planningTime', 'planningDoctor', 'ok1', 'ok2', 'pomucky', 'tisk', 'pznDisplay')
     #list_filter = ['name', 'birthNumber', 'diagnosis', 'radAs', 'doctor', 'resimulTime', 'drawingTime', 'drawingDoctor', 'planningTime', 'planningDoctor', 'ok1', 'ok2', 'tisk']
     search_fields = ['name', 'birthNumber', 'diagnosis', 'radAs', 'doctor', 'resimulTime', 'drawingTime', 'drawingDoctor', 'planningTime', 'planningDoctor', 'ok1', 'ok2', 'pomucky', 'tisk', 'pzn']
-    #date_hierarchy = 'resimulTime'
+    date_hierarchy = 'resimulTime'
     list_per_page = 50
 
 

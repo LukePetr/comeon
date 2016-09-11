@@ -24,7 +24,7 @@ class Uloziste(models.Model):
     birthNumber = models.CharField('Rodné číslo', max_length=10)
     diagnosis = models.CharField('Diagnóza', max_length=100, blank=True)
     radAs = models.CharField('Rad. As.', max_length=100, blank=True)
-    doctor = models.CharField(max_length=2, choices=DOCTOR, default=FRESHMAN,)
+    doctor = models.CharField('Doktor',max_length=2, choices=DOCTOR, default=FRESHMAN,)
     resimulTime = models.DateTimeField('Resimulace', default=timezone.now, blank=True)
     drawingTime = models.DateField('Zakreslení', default=timezone.now, blank=True)
     drawingDoctor = models.CharField('Zakreslení stav', max_length=100, blank=True)

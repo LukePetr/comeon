@@ -1,0 +1,56 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block extrastyle %}
+    {# Changing the color of the help text across the entire admin #}
+    <style>
+	 .field-drawingTime{
+        //border-style: solid;
+        //border-color: #000;
+	color: #fff;
+	background-color: #5d8aa8;
+        }
+
+	 .field-drawingDoctor{
+        //border-style: solid;
+        //border-color: #000;
+	color: #fff;
+	background-color: #5d8aa8;
+        }
+
+	 .field-planningTime{
+        //border-style: solid;
+        //border-color: #000;
+	color: #fff;
+	background-color: #00cc99;
+        }
+
+	 .field-planningDoctor{
+        //border-style: solid;
+        //border-color: #000;
+	color: #fff;
+	background-color: #00cc99;
+        }
+
+	 .field-ok1{
+        //border-style: solid;
+        //border-color: #000;
+	color: #fff;
+	background-color: #8db600;
+        }
+
+	 .field-ok2{
+        //border-style: solid;
+        //border-color: #000;
+	color: #fff;
+	background-color: #8db600;
+        }
+    </style>
+{% endblock %}
